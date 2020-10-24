@@ -1,10 +1,9 @@
-# Module 3 : Predict Diamond's Price
-
+# Module 3 : Diamond's Price
+![Image](https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F3824396%2Fbeaf52135483332c90a86b157e178715%2Fimage%20(12).png?generation=1588785521255575&alt=media)
 
 ## Goal
 
-The goal of this project is to predict the price of diamonds, training machine learning models. In this project we will have to upload the results obtained in the kaggle competition.
-It's almost impossible to get a value below that dollar quantity because diamond's price depends on a lot of variables as you'll see explained on the jupyter-notebook file.
+The goal of this competition is the prediction of the price of diamonds based on their characteristics (weight, color, quality of cut, etc.), putting into practice all the machine learning techniques you know.
 
 
 ### Data sources 
@@ -60,11 +59,16 @@ conda install Matplotlib
         ├── processed
         └── results
 ```
+## Machine learning model
+1. RandomForestRegressor
+2. AdaBoostRegressor
+3. GradientBoostingRegressor
+4.xgb
+5. lgb
+6. BaggingRegressor
 ## Conclusions 
-1. x,y, and z have a very strong relation with price but surprisingly depth (which comes from x,y, and z) doesn't has a significant relation with price.
-2. Carat has a strong relation with price
-3. Table doesn't have a significant relation with price or any other variable as well.
-4. Average diamond prices are low.The upper quartile is bigger. It shows that whichever category it may be there's a variety of diamonds that are still very expensive.
-
-
+The best result is obtained with simple models within the model lgb, the most important thing is to do the train, test and validation well with a 60%, 20%, 20% of the datasheet to verify that the RMSE result in train is not too far from the others (test, validation).
+I calculated the RMSE proxy which is a coefficient between the RMSES of the train and the mean of the RMSE test and validation, if this is 1 the RMSE of the train is the same as the RMSE of test and validation, 0 is very different.
+Therefore, the important thing is to lower the RMSE without the proxy RMSE coefficient falling too low.
+Another important thing is to seek inside the datasheet and create your own variables.
 
